@@ -1,18 +1,16 @@
 version: "3.7"
 services:
   django:
-    build:
-      context: .
-      dockerfile: compose/django/Dockerfile
+    build: ./backend
+    volumes:
+      - ./backend:/app/backend
     ports:
       - "8000:8000"
     stdin_open: true
     tty: true
     command: python manage.py runserver 0.0.0.0:8000
-  react:
-    build:
-      context: ./frontend
-      dockerfile: ../compose/react/Dockerfile
+  web:
+    build: ./frontend
     volumes:
       - ./frontend:/app
       # One-way volume to use node_modules from inside image
