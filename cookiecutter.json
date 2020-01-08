@@ -1,6 +1,6 @@
 {
     "directory_name": "My React and Django Project",
-    "project_slug": "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
+    "project_slug": "{{ cookiecutter.directory_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
     "description": "React! And Django!",
     "author_name": "Alvaro Duran",
     "domain_name": "example.com",
